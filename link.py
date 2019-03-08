@@ -1,10 +1,4 @@
-import urllib2
-import re
-
-# connect to a URL
-website = urllib2.urlopen('https://www.20scoops.com')
-# read html code
-html = website.read()
-# use re.findall to get all the links
-links = re.findall('"((http|ftp)s?://.*?)"', html)
-print links
+import subprocess
+bash = "wget --spider -r https://www.20scoops.com 2>&1 | grep '^--' | awk '{ print $3 }' | grep -v '\.\(css\|js\|png\|gif\|jpg\|JPG\)$' > urls.txt"
+process = subprocess.Popen(bash.split(), stdout=subprocess.PIPE)
+output, error = process.communicate
