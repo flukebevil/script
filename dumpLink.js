@@ -8,7 +8,7 @@ const urlList = JSON.parse(readLinkFile);
 //   await util.callPython(elem.link, elem.link);
 // });
 const init = async () => {
-  await util.callPython('www.20scoops.com', '20scoops');
+  await util.callPython('https://www.20scoops.com', '20scoops');
 };
 init();
 console.log(urlList);
