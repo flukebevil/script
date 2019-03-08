@@ -1,7 +1,6 @@
 import subprocess
 import json
 import os
-from pprint import pprint
 base_path = os.path.abspath('.')
 script_command = []
 
